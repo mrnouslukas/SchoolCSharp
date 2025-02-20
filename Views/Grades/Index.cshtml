@@ -1,0 +1,33 @@
+﻿@using Magistri.ViewModels
+@model IEnumerable<GradesVM>
+<h1>List of all grades</h1>
+@if (User.Identity.IsAuthenticated && (User.IsInRole("Admin") || User.IsInRole("Teacher"))) {
+    <div>
+        <a class="btn btn-success" asp-controller="Grades" asp-action="Create">
+            Add a new grade
+        </a>
+    </div>
+    <hr />
+}
+@foreach (var item in Model) {
+    <div class="border border-1 border-dark p-2">
+        <p>@item.StudentName </p>
+        <p>
+            @item.SubjectName: @item.Topic - @item.Mark <br>
+            @item.Date.ToShortDateString()
+        </p>
+        @if (User.Identity.IsAuthenticated && (User.IsInRole("Teacher")||User.IsInRole("Admin")))
+        {
+            <div class="p-2">
+                <a class="btn btn-warning" asp-controller="Grades" asp-action="Edit"
+               asp-route-id="@item.Id">Edit</a>
+            <form style="display:inline" method="post">
+                <button type="submit" class="btn btn-danger" asp-action="Delete" asp-controller="Grades"
+                        asp-route-id="@item.Id">
+                    Delete
+                </button>
+            </form>
+        </div>
+        }
+    </div>
+}

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project>
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA8O660Rp8cU+V30uHWZapKQAAAAACAAAAAAAQZgAAAAEAACAAAABZhJlLvbQb8/c0Lop8Q0/YGHQh2Ephxi/Z1wge9uMLlwAAAAAOgAAAAAIAACAAAABCl58+/Ao0pMscLwyFYVrIku0XziYCVu0KAvlcExLg74AAAADftXdjCKPRguyyy/e7cuuBx7jYkIBFUUSbxM1bdoGeE/SpjwpuaR9cY4T8FMrGC2pps84RQew6d2uiv4RGsBpuNU4QLkdACu1CF6TH0dMGnEuVBjg4D1KHIxzYmgIC4oQvbL98k0AgFe1mwUaYWZB+j1czhdcfppXU+1Qv78Rq2EAAAADtBLrofeTmsxfa3IUunhMHOt4RdZCfEBI8bBIcloFyBFW50Mw8c+EgBNWRz29N7L9ZqSVsGG7yvcNbTyJGZ1uZ</EncryptedPassword>
+    <History>True|2025-01-02T12:27:30.7397202Z||;True|2025-01-02T13:23:16.8313432+01:00||;</History>
+    <LastFailureDetails />
+  </PropertyGroup>
+  <ItemGroup>
+    <DestinationConnectionStrings Include="AzureDbConnection">
+      <Value>Server=tcp:schooldbserver4.database.windows.net,1433%3bInitial Catalog=magistriSQL%3bPersist Security Info=False%3bUser ID=kraljaprvni%3bPassword=hesloABC123.%3bMultipleActiveResultSets=True%3bEncrypt=True%3bTrustServerCertificate=False%3bConnection Timeout=30%3b</Value>
+    </DestinationConnectionStrings>
+  </ItemGroup>
+</Project>

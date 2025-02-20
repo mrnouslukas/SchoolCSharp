@@ -1,0 +1,36 @@
+﻿@using Magistri.DTO
+@model IEnumerable<StudentDto>
+<h1>List of all students</h1>
+
+<form method="post" enctype="multipart/form-data" asp-controller="FileUpload" asp-action="Upload">
+    <div class="form-group">
+        <input type="file" name="file" />
+        @*pozor, na name je zavisle jmeno parametru, cili souboru predavaneho do controlleru. Pokud se parametr jmenuje file, musi i name inputu byt file*@
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Upload" />
+    </div>
+</form>
+
+@foreach (var item in Model) {
+    <div class="border border-1 border-dark p-2 ">
+        <h5>@item.FirstName @item.LastName</h5>
+        Id: @item.Id
+        <p>Date of Birth: @item.DateOfBirth.ToShortDateString()</p>
+        @if (User.Identity.IsAuthenticated && (User.IsInRole("Admin") || User.IsInRole("Teacher")) ) {
+            <a class="btn btn-warning" asp-action="Edit" asp-route-id=@item.Id>Edit</a>
+        }
+        @if (User.Identity.IsAuthenticated && User.IsInRole("Admin")) {
+            <form style="display:inline" method="post">
+                <input class="btn btn-danger" asp-action="Delete" asp-route-id=@item.Id type="submit" value="Delete" />
+            </form>
+        }
+    </div>
+}
+    @if (User.Identity.IsAuthenticated && User.IsInRole("Admin")) {
+        <hr />
+        <div>
+            <a class="btn btn-success" asp-action="Create">Create</a>
+        </div>
+    }
+
