@@ -1,0 +1,2 @@
+# SchoolCSharp
+Školní aplikace
